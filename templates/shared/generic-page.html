@@ -1,0 +1,58 @@
+{% extends "shared/base.html" %}
+
+{% block banner %}
+{% if compact %}
+{% include "shared/slicey.html" %}
+{% else %}
+<div class="top center">
+    {% include "shared/bigger-banner.html" %}
+</div>
+{% endif %}
+{% endblock %}
+
+{% block rest-of-page %}
+
+
+    {% block between %}
+    <div id="between">
+        {{between|safe}}
+    </div>
+    {% endblock %}
+
+
+    {% block main %}
+
+    <div id="content" class="page {% if compact %}underSlice{% endif %}">
+        {{ body_content|safe }}
+    </div>
+
+    {% endblock %}
+
+    {% block afters %}{% endblock %}
+
+{% endblock %}
+
+
+
+{% block footer_nav %}
+<nav>
+        <span>
+            <a href="https://github.com/jMyles">
+                <img src="/apps/shared/img/GitHub-Mark-120px-plus.png"/>
+            </a>
+        </span>
+
+    <span>
+            <a href="https://thisisthebus.com">
+                <img src="/apps/shared/img/this-is-the-bus.png"/>
+            </a>
+        </span>
+
+    <span>
+            <a href="https://twitter.com/jMylesHolmes">
+                <img src="/apps/shared/img/twitter.png"/>
+            </a>
+        </span>
+
+</nav>
+{% endblock %}

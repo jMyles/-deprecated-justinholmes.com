@@ -1,0 +1,18 @@
+{% extends "shared/generic-page.html" %}
+
+{% block between %}
+    <div class="center">
+        {{ between | safe }}
+    </div>
+{% endblock %}
+
+{% block main %}
+
+<div id="content">
+    <div class="detail">
+        {{ body_content |safe }}
+    </div>
+</div>
+
+
+{% endblock %}

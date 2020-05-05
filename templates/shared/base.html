@@ -1,0 +1,43 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+  <link rel="stylesheet" href="/apps/shared/css/styles.css?v=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+  <link href="/apps/shared/css/fonts.css" rel="stylesheet">
+
+  <meta charset="utf-8">
+
+  <title>{{page_title}}</title>
+
+    <meta name="description" content="{% if meta_description %}{{meta_description}}{% else %}Justin Myles Holmes personal web stuff.{% endif %}">
+
+  <meta name="author" content="Justin Myles Holmes">
+</head>
+
+
+
+{% block body %}
+<body>
+    {% block banner %}{% endblock %}
+
+    {% block rest-of-page %}
+        {% block main %}{% endblock %}
+    {% endblock %}
+
+    {% block footer %}
+    <div id="footer">
+    {% block footer_nav %}{% endblock %}
+    {% if build_hashes %}
+            <ul class="verySmall">
+                <li>Build Time: {{build_time}}</li>
+                <li>App: {{build_hashes.app}}</li>
+                <li>Data: {{build_hashes.data}}</li>
+            </ul>
+    {% endif %}
+    </div>
+    {% endblock %}
+
+</body>
+{% endblock %}
