@@ -33,6 +33,6 @@ page = page_builder.build_page("now", root=True, compact=True, template_name="sh
 page = page_builder.build_page("before", template_name="shared/time-series.html", root=True, compact=True)
 page = page_builder.build_page("talks", template_name="shared/time-series.html", root=True, compact=True)
 
-page = page_builder.build_page("best-argument-against-herd-immunity")
+page = page_builder.build_page("covid19/best-argument-against-herd-immunity")
 
 
