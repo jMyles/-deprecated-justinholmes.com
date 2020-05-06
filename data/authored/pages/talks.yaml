@@ -1,48 +1,63 @@
 
 events:
   - timeframe: Talk with The Peregrine, March 2020
+    location: Denver, Colorado
     description: '"Privacy and tunes": Stories of research and engineering in cryptological science in the past year.'
     youtube: ahJZ6A-JW_c
   - timeframe: EthNewYork 2019
-    description: Intimate walkthrough and Q&A about NuCypher's cryptographic primitives
+    location: New York City, New York
+    description: Roundtable walkthrough and Q&A about NuCypher's cryptographic primitives
     youtube: xAG4eMj7ZxY
   - timeframe: EthDenver 2019
+    location: Denver, Colorado
     description: A "brady bunch" CLI tour of NuCypher, with Zelda music.
     youtube: om0tew-Z4gE
-  - timeframe: "'Off-DevCon', Prague, November 2018"
-    description: NuCypher and the cryptology of proxy re-encryption (with music)
+  - timeframe: Off-DevCon 2018
+    location: Prague, Czechia
+    description: NuCypher and the cryptology of proxy re-encryption
     youtube: OuY9WXK61gY
-  - timeframe: PyCon 2016
-    description: '#RoadTripToPyCon - a story of PyCon across the USA'
-    youtube: yC9m2GInXqU?start=3023
-  - timeframe: hendrix demo (Django-NYC @ Buzzfeed) - December 2015
+  - timeframe: PyCon 2018
+    description: "Python across the USA: This is the Bus."
+    location: Cleveland, Ohio
+    youtube: tRp84BlFF94
+  - timeframe: hendrix demo (Django-NYC) - December 2015
+    location: Buzzfeed HQ, New York, New York
     description: 'A live demo of async network traffic with Django and hendrix.'
     youtube: 92VeMkjM1TQ
   - timeframe: Mesh Networking Q&A @ Porcupine Festival 2014
+    location: Upstate New Hampshire Wilderness
     description: Brian Sovryn, Paige Peterson and myself talk about its implications for liberty and network traffic.
     youtube: uu0-wnAbHzM
   - timeframe: Django News Podcast @ PyCon 2014
+    location: Montréal, Quebec, Canada
     description: Elena Williams had me on her show for a half hour radio interview about some of my contributions to Django.
     soundcloud: 150599324
   - timeframe: DjangoCon 2014
+    location: Portland, Oregon
     description: "'Django Unsetting'd' - Why the Django LazySettings object sucks"
     youtube: NMwuzJP4Z_o?start=2056
   - timeframe: Interview on Slice of New Paltz, 2012
+    location: New Paltz, New York
     description: I did a half-hour interview with Don Kerr about our tech collective and the local technology scene in New Paltz, NY.
     vimeo: "38413039"
   - timeframe: DjangoCon 2012
+    location: Washington, DC
     description: 'A "lightning song" to the tune of "Big Rock Candy Mountain" about the miseries of django.contrib.auth.models.User, which have now all been fixed.'
     youtube: gx8qTxlFXRY?start=3092
   - timeframe: DjangoCon 2012
+    location: Washington, DC
     description: "'Why the Django Community Sucks' - note, the 'sucks' talk is a tradition in the Django community.  I really love the Django community, but I did find a few good bones to pick.  Naturally, with a talk this sensitive, I took some liberty at the beginning disclaiming,"
     youtube: NrkopXN9sQg
   - timeframe: SUNY New Paltz, March 2012
+    location: New Paltz, New York
     description: A Q&A session about Higher Education Politics and Technology
     youtube: elrr20_XGFo
   - timeframe: Free Software and Drug Policy Reform, Drug Policy Alliance Conf 2009
-    description: A 10-minute talk outlining the ways in which free software advocacy and drug policy reform stem from teh same underlying set of ideas.
+    location: Albuquerque, New Mexico
+    description: A 10-minute talk outlining the ways in which free software advocacy and drug policy reform stem from the same underlying set of ideas.
     youtube: Ik62Rc7hJEs
   - timeframe: Debate for Town Judge, November 2007
+    location: New Paltz, New York
     description: I ran for Town Judge while I was in college.  Why not?
     youtube: 751O3JynUHk
 

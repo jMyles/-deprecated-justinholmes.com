@@ -61,9 +61,12 @@ hr {
 	margin: auto;
 }
 
-.aisde1 {
+.half-page {
 	width: 50%;
 	margin: auto;
+}
+
+.aside1 {
     margin-top:20px;
 	background-color: antiquewhite;
 	padding: 5px;
@@ -71,10 +74,12 @@ hr {
     font-size: .7em;
 }
 
+
+
 #content {
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 60%;
     margin: auto;
     font-size: 1.2em;
 }
@@ -202,7 +207,7 @@ nav a img {
 
 .page-headline {
     font-family: 'Cabin', sans-serif;
-    width: 70%;
+    width: 60%;
     margin: auto;
     margin-top: 80px;
     background-color: #cfcfcf;

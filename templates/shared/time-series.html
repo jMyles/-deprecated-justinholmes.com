@@ -6,7 +6,8 @@
     {% for event in events %}
     <div class="event">
         <div class="timeframe">{{event.timeframe}}</div>
-        <div class="description">{{event.description|safe}}</div>
+        <div style="float:none;" class="location center">{{event.location}}</div>
+        <div class="description aside1 center">{{event.description|safe}}</div>
         <div class="media">
             {% if event.youtube %}
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/{{event.youtube}}" frameborder="0" allowfullscreen></iframe>
