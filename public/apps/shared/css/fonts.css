@@ -27,3 +27,10 @@
   font-weight: 400;
   src: local('Larissa'), local('larissa'), url(/apps/shared/fonts/Larissa.ttf);
 }
+
+@font-face {
+  font-family: 'll-pixel';
+  font-style: normal;
+  font-weight: 400;
+  src: local('LL Pixel'), local('ll-pixel'), url(/apps/shared/fonts/LLPIXEL3.ttf);
+}
