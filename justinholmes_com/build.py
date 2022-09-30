@@ -28,10 +28,14 @@ build_meta = {'data_checksum': hashes['data'],
 
 page_builder = PageBuilder(build_meta, force_rebuild=False)
 
-page = page_builder.build_page("index", template_name="shared/detail.html", root=True, active_context={'meta_description':"I program. I travel. I teach. I invent.  This is the personal web presence of Justin Myles Holmes."})
-page = page_builder.build_page("now", root=True, compact=True, template_name="shared/detail.html")
+page = page_builder.build_page("index", template_name="shared/brief.html", root=True, active_context={'meta_description':"Justin Holmes music, blockchain bluegrass, video game music"})
+page = page_builder.build_page("music", root=True, compact=True)
+
+page = page_builder.build_page("these-days", root=True, compact=True, template_name="shared/detail-brightback.html")
 page = page_builder.build_page("before", template_name="shared/time-series.html", root=True, compact=True)
 page = page_builder.build_page("talks", template_name="shared/time-series.html", root=True, compact=True)
+page = page_builder.build_page("tour", template_name="shared/time-series.html", root=True, compact=True)
+
 
 page = page_builder.build_page("covid19/best-argument-against-herd-immunity")
 

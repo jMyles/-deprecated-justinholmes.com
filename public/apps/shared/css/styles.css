@@ -1,26 +1,34 @@
 body {
     background-color: #ededed;
     font-family: 'Kreon';
+    background-image: url("/apps/shared/img/brick-back.jpg");
+    background-repeat: repeat-y;
 }
 
-h1, h2, h3, h4 {
-    font-family: 'Cabin', sans-serif;
+h2, h3, h4 {
+    font-family: 'ds-term';
 }
 
 h1 {
+    font-family: 'larissa';
     font-size: 4em;
     margin: 0;
+    line-height: 60px;
+}
+
+h2 {
+    font-size: 2em;
 }
 
 a {
     text-decoration: none;
-    color: black;
-    text-shadow: #0089fe 0.05em 0.05em 0em;
+    color: #9a9a9a;
+    text-shadow: #000 1px 1px 2px;
 }
 
 a:hover {
-    color: #0089fe;
-    text-shadow: black 1px 1px 0em;
+    color: #8e845d;
+    text-shadow: black 1px 1px 1px;
 }
 
 blockquote {
@@ -39,6 +47,12 @@ hr {
     flex-direction: row;
     align-items: center;
     text-align: center;
+    margin-top: 10px;
+}
+
+#slice nav {
+    margin-left: 70px;
+    margin-top: -15px;
 }
 
 #slice span {
@@ -91,9 +105,19 @@ hr {
 
 }
 
-#footer {
-    margin-top: 30px;
+#footer-spacer {
+    margin-top: 100px;
+    width:100%;
 }
+
+#footer {
+    background-color: rgba(16, 0, 0, 0.59);
+    padding-top: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
 
 #this-page a {
     text-shadow: black 1px 1px 0px;
@@ -169,13 +193,18 @@ nav a img {
 
 .detail {
     font-family: 'Inconsolata', monospace;
-    width: 800px;
-    margin: auto;
-    margin-top: 30px;
-    background-color: #cfcfcf;
-    border: 5px ridge #5683bf;
-    padding: 10px;
     font-size: 1.4em;
+}
+
+.detail-bright-back {
+	font-family: 'Inconsolata', monospace;
+	width: 800px;
+	margin: auto;
+	margin-top: 30px;
+	background-color: #cfcfcf;
+	border: 5px ridge #5683bf;
+	padding: 10px;
+	font-size: 1.4em;
 }
 
 .detail p {
@@ -187,7 +216,6 @@ nav a img {
     margin: 0;
     font-size: 1.5em;
 }
-
 
 .center {
     text-align: center;
@@ -203,6 +231,15 @@ nav a img {
 
 .orange-glow, .orange-glow a {
     text-shadow: #db7b46 0em 2px 3px;
+}
+
+.deep-stroke, .deep-stroke a {
+    text-shadow: #000 1px 2px 3px, #000 -1px -2px 3px;
+}
+
+.bright {
+    color: white;
+    text-shadow: #7b6b15 0px 0px 1px, black 1px 1px 3px;
 }
 
 .page-headline {
@@ -225,4 +262,28 @@ nav a img {
 .center {
     margin: auto;
     text-align: center;
+}
+
+.media-share {
+	background-color: rgba(156, 156, 156, 0.4);
+	width: 600px;
+	margin-top: -5px;
+    padding: 10px 0 10px 0;
+}
+
+.media-share a img {
+	width: 110px;
+	vertical-align: middle;
+	margin-left: 10px;
+}
+
+.media-item {
+    border-bottom: 1px solid white;
+    padding-bottm: 10px;
+}
+
+.small-credit {
+color: white;
+font-size: 15px;
+font-family: larissa;
 }

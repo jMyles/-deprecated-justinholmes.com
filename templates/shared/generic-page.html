@@ -1,30 +1,30 @@
 {% extends "shared/base.html" %}
 
 {% block banner %}
-{% if compact %}
-{% include "shared/slicey.html" %}
-{% else %}
-<div class="top center">
-    {% include "shared/bigger-banner.html" %}
-</div>
-{% endif %}
+    {% if compact %}
+        {% include "shared/slicey.html" %}
+    {% else %}
+        <div class="top center">
+            {% include "shared/bigger-banner.html" %}
+        </div>
+    {% endif %}
 {% endblock %}
 
 {% block rest-of-page %}
 
 
     {% block between %}
-    <div id="between">
-        {{between|safe}}
-    </div>
+        <div id="between">
+            {{ between|safe }}
+        </div>
     {% endblock %}
 
 
     {% block main %}
 
-    <div id="content" class="page {% if compact %}underSlice{% endif %}">
-        {{ body_content|safe }}
-    </div>
+        <div id="content" class="page {% if compact %}underSlice{% endif %}">
+            {{ body_content|safe }}
+        </div>
 
     {% endblock %}
 
@@ -35,24 +35,36 @@
 
 
 {% block footer_nav %}
-<nav>
+    <nav>
         <span>
             <a href="https://github.com/jMyles">
-                <img src="/apps/shared/img/GitHub-Mark-120px-plus.png"/>
+                <img src="/apps/shared/img/Octocat.png"/>
             </a>
         </span>
 
-    <span>
-            <a href="https://thisisthebus.com">
-                <img src="/apps/shared/img/this-is-the-bus.png"/>
+        <span>
+            <a href="https://justinholmes.bandcamp.com/">
+                <img src="/apps/shared/img/bandcamp-button-bc-circle-green-256.png"/>
             </a>
         </span>
 
-    <span>
-            <a href="https://twitter.com/PintSzPorcupine">
+        <span>
+            <a href="https://open.spotify.com/artist/2ThESMbZDNeAi02dpZZncE">
+                <img src="/apps/shared/img/Spotify_Icon_RGB_Green.png"/>
+            </a>
+        </span>
+
+        <span>
+            <a href="https://twitter.com/justinholmesmus">
                 <img src="/apps/shared/img/twitter.png"/>
             </a>
         </span>
 
-</nav>
+        <span>
+            <a href="https://www.instagram.com/justinholmes_music/">
+                <img src="/apps/shared/img/instagram-256-2.png"
+            </a>
+        </span>
+
+    </nav>
 {% endblock %}

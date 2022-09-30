@@ -2,24 +2,25 @@
 
 <html lang="en">
 <head>
-  <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
-  <link rel="stylesheet" href="/apps/shared/css/styles.css?v=1.0">
-  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
-  <link href="/apps/shared/css/fonts.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+    <link rel="stylesheet" href="/apps/shared/css/styles.css?v=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <link href="/apps/shared/css/fonts.css" rel="stylesheet">
 
-  <meta charset="utf-8">
+    <meta charset="utf-8">
 
-  <title>{{page_title}}</title>
+    <title>{{ page_title }}</title>
 
-    <meta name="description" content="{% if meta_description %}{{meta_description}}{% else %}Justin Myles Holmes personal web stuff.{% endif %}">
+    <meta name="description" content="
+            {% if meta_description %}{{ meta_description }}{% else %}Justin Holmes: blockchain bluegrass and video game music{% endif %}">
 
-  <meta name="author" content="Justin Myles Holmes">
+    <meta name="author" content="Justin Myles Holmes">
 </head>
 
 
 
 {% block body %}
-<body>
+    <body>
     {% block banner %}{% endblock %}
 
     {% block rest-of-page %}
@@ -27,17 +28,18 @@
     {% endblock %}
 
     {% block footer %}
-    <div id="footer">
-    {% block footer_nav %}{% endblock %}
-    {% if build_hashes %}
-            <ul class="verySmall">
-                <li>Build Time: {{build_time}}</li>
-                <li>App: {{build_hashes.app}}</li>
-                <li>Data: {{build_hashes.data}}</li>
-            </ul>
-    {% endif %}
-    </div>
+        <div id="footer-spacer"></div>
+        <div id="footer">
+            {% block footer_nav %}{% endblock %}
+            {% if build_hashes %}
+                <ul class="verySmall">
+                    <li>Build Time: {{ build_time }}</li>
+                    <li>App: {{ build_hashes.app }}</li>
+                    <li>Data: {{ build_hashes.data }}</li>
+                </ul>
+            {% endif %}
+        </div>
     {% endblock %}
 
-</body>
+    </body>
 {% endblock %}

@@ -1,0 +1,64 @@
+{% extends "shared/generic-page.html" %}
+
+{% block between %}
+    <div class="center">
+        {{ between | safe }}
+    </div>
+{% endblock %}
+
+{% block main %}
+
+    <div id="content">
+        <div class="detail">
+            <div class="media-item" id="nanny-state-fiddler">
+                {% include "shared/nanny-state-fiddler-share.html" %}
+                <span class="small-credit">produced by Skyler Golden</span>
+            </div>
+            <div class="media-item" id="see-each-other">
+                <h2 class="bright">"See Each Other" Session</h2>
+                <h3 class="bright">(feat. Cory Walker and Dani Jaye)</h3>
+                <small class="bright">A single-take session in front of a tiny audience of friends and colleagues in St.
+                    Pete.</small>
+                <iframe width="600" height="335" src="https://www.youtube.com/embed/l2ptKjqV4BA"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                <div class="media-share">
+                    <a href="https://justinholmes.bandcamp.com/album/windows-where-we-can-see-each-other-live-from-zen-recording">
+                        <img src="/apps/shared/img/bandcamp-logotype-dark-128.png"/>
+                    </a>
+                    <a href="https://music.apple.com/us/album/windows-where-we-can-see-each-other-live-from-zen-recording/1637787224">
+                        <img src="/apps/shared/img/apple.svg"/>
+                    </a>
+                    <a href="https://open.spotify.com/album/6iLCIJ6Lejs0kq5X7pI797">
+                        <img src="/apps/shared/img/Spotify_Icon_RGB_Green.png"/>
+                    </a>
+                    <a href="https://www.deezer.com/us/album/343253327?deferredFl=1">
+                        <img src="/apps/shared/img/Deezer_logo.svg"/>
+                    </a>
+                </div>
+                <span class="small-credit">produced by Skyler Golden</span>
+            </div>
+            <div class="media-item" id="ethbcn-2022">
+                <h2 class="bright">EthBarcelona 2022</h2>
+                <h3 class="bright">Live from the Centre Convencions International Barcelona, July 8, 2022.</h3>
+                <small class="bright">with Jakub Vysoky, Shaka Lei Kaumaka, and David Flores Pradillas</small>
+                <iframe width="600" height="335" src="https://www.youtube.com/embed/CIPOWFna9Wg"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="detail-bright-back">
+            <small>
+                All original music is released as Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA
+                4.0). Feel free to distribute, remix, and do whatever pleases you with this music, as long as you
+                attribute the creators.
+            </small>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+

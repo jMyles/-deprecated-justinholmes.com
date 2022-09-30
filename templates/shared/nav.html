@@ -1,6 +1,12 @@
 <nav>
-    <span {% if page_name == "now" %}id="this-page"{% endif %}>
-        <a href="/now.html">Now</a>
+    <span {% if page_name == "music" %}id="this-page"{% endif %}>
+        <a href="/music.html">Music</a>
+    </span>
+    <span {% if page_name == "tour" %}id="this-page"{% endif %}>
+        <a href="/tour.html">Tour</a>
+    </span>
+    <span {% if page_name == "these-days" %}id="this-page"{% endif %}>
+        <a href="/these-days.html">These&nbsp;Days</a>
     </span>
     <span {% if page_name == "talks" %}id="this-page"{% endif %}>
         <a href="/talks.html">Talks</a>
