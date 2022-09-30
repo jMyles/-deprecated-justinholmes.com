@@ -32,14 +32,14 @@ a:hover {
 }
 
 blockquote {
-	border-left: 3px dotted #db7b46;
-	padding-left: 40px;
-	margin-left: 0px;
+    border-left: 3px dotted #db7b46;
+    padding-left: 40px;
+    margin-left: 0px;
 }
 
 hr {
-    width:75%;
-    color:#db7b46;
+    width: 75%;
+    color: #db7b46;
 }
 
 #slice {
@@ -68,26 +68,25 @@ hr {
 }
 
 #between {
-	font-family: cabin, sans-serif;
-	font-size: 1.9em;
-	text-align: center;
-	width: 75%;
-	margin: auto;
+    font-family: cabin, sans-serif;
+    font-size: 1.9em;
+    text-align: center;
+    width: 75%;
+    margin: auto;
 }
 
 .half-page {
-	width: 50%;
-	margin: auto;
+    width: 50%;
+    margin: auto;
 }
 
 .aside1 {
-    margin-top:20px;
-	background-color: antiquewhite;
-	padding: 5px;
+    margin-top: 20px;
+    background-color: antiquewhite;
+    padding: 5px;
     font-family: 'Kreon', serif;
     font-size: .7em;
 }
-
 
 
 #content {
@@ -107,7 +106,7 @@ hr {
 
 #footer-spacer {
     margin-top: 100px;
-    width:100%;
+    width: 100%;
 }
 
 #footer {
@@ -197,14 +196,14 @@ nav a img {
 }
 
 .detail-bright-back {
-	font-family: 'Inconsolata', monospace;
-	width: 800px;
-	margin: auto;
-	margin-top: 30px;
-	background-color: #cfcfcf;
-	border: 5px ridge #5683bf;
-	padding: 10px;
-	font-size: 1.4em;
+    font-family: 'Inconsolata', monospace;
+    width: 800px;
+    margin: auto;
+    margin-top: 30px;
+    background-color: #cfcfcf;
+    border: 5px ridge #5683bf;
+    padding: 10px;
+    font-size: 1.4em;
 }
 
 .detail p {
@@ -265,16 +264,19 @@ nav a img {
 }
 
 .media-share {
-	background-color: rgba(156, 156, 156, 0.4);
-	width: 600px;
-	margin-top: -5px;
+    background-color: rgba(156, 156, 156, 0.4);
+    width: 600px;
+    margin-top: -5px;
     padding: 10px 0 10px 0;
 }
 
 .media-share a img {
-	width: 110px;
-	vertical-align: middle;
-	margin-left: 10px;
+    /* width: 110px; */
+    vertical-align: middle;
+    margin-left: 10px;
+    max-height: 40px;
+    max-width: 135px;
+    margin-right: 10px;
 }
 
 .media-item {
@@ -283,7 +285,11 @@ nav a img {
 }
 
 .small-credit {
-color: white;
-font-size: 15px;
-font-family: larissa;
+    color: white;
+    font-size: 15px;
+    font-family: larissa;
+}
+
+.larissa {
+    font-family: "larissa";
 }
