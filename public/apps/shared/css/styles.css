@@ -209,9 +209,30 @@ nav a img {
     font-size: 1.4em;
 }
 
+.detail-bright-back :is(h1,h2,h3,h4,h5) {
+    margin: auto;
+}
+
+.detail-bright-back a {
+    color: #9191ff;
+    text-shadow: 1px 0px 0px black, 0px -1px 0px black
+}
+
+.detail-bright-back a:hover {
+    color: gray;
+}
+
 .detail p {
     margin: 0;
     margin-top: 20px;
+}
+
+.detail-bright-back strong {
+    text-shadow: 1px 1px 0px #2c00ff;
+}
+
+.media-item .detail-bright-back {
+    margin: 0;
 }
 
 .detail h1 {

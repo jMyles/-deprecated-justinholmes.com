@@ -1,13 +1,24 @@
 title: What Justin is up to lately
 body_content: |
   <h2>What Justin is up to lately</h2>
+  <h3>(In keeping with the "now page" tradition)</h3>
   Hey lovely friends.  Justin here.
   
-  Most of my life these days is occupied making original bluegrass, acoustic covers of classic video game music, novel threshold cryptograpohy, and ZK tech at <a style="color: #7c47ee" href="https://threshold.network">Threshold Network</a>.
-    <a href="https://threshold.network">
+  These days, I'm doing a lot of python and pickin'. <br/>
+  A lot of rust and ramblin'.<br/>
+  A lot of git and a lot of guitar.<br/>
+  
+  NuCypher, a project on which I've been working for about five years, has become the first deployed application on <a style="color: #7c47ee" href="https://threshold.network">Threshold Network</a>, a "layer 2.5" (not sure if that's a common phrase, but you get the idea) designed to provide affordable, novel, coherent access to threshold cryptographic primitives for use in decentralized (web and other) applications.
+  <br/>
+     <a href="https://threshold.network"><img src="/apps/shared/img/threshold.svg"/></a>
+  <br/>
+  
+  After many years of python getting a large majority share of my attention and thought, rust has now become nearly as important and interesting to me.  Making useful commits in rust feels like a meaningful step in the trajectory of my career.
+  
   <hr/>
-    <img src="/apps/shared/img/threshold.svg"/>
-  <hr/>
+  
+  Nothing opens my heart further, nor fills it with greater joy, than playing kickass music for blockchain friends.  That's one of the best things I'm up to these days.  I've been playing guitar 25 years, and I'm a much better player than when I had only been playing 24 years.
+  
   I'm <a href="/tour.html">on the road</a> much of the time, somtimes in my 36' school bus.
   
   Half the time, my awesome kiddo Fibonacci is with me.
