@@ -2,7 +2,6 @@ body {
     background-color: #ededed;
     font-family: 'Kreon';
     background-image: url("/apps/shared/img/brick-back.jpg");
-    background-repeat: repeat-y;
 }
 
 h2, h3, h4 {
@@ -284,6 +283,11 @@ nav a img {
     padding-bottm: 10px;
 }
 
+.media-item iframe {
+    display: block;
+    clear: left;
+}
+
 .small-credit {
     color: white;
     font-size: 15px;
@@ -292,4 +296,9 @@ nav a img {
 
 .larissa {
     font-family: "larissa";
+}
+
+.lower-photo {
+    display: block;
+    margin-top: 20px;
 }
