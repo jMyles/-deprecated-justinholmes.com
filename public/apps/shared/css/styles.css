@@ -262,7 +262,7 @@ nav a img {
 
 .bright {
     color: white;
-    text-shadow: #7b6b15 0px 0px 1px, black 1px 1px 3px, black -1px -1px 3px
+    text-shadow: #7b6b15 0px 0px 1px, black 1px 1px 3px, black -1px -1px 3px, black 2px 2px 2px;
 }
 
 .page-headline {
@@ -328,8 +328,9 @@ nav a img {
     margin-top: 20px;
 }
 
-#sorta-background {
+.sorta-background {
     position: absolute;
     z-index: 0;
-    opacity: .5;
+    opacity: .4;
+    width: 90%;
 }
