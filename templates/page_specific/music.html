@@ -1,56 +1,5 @@
 {% extends "shared/generic-page.html" %}
 
-{% block web3_head_inclusion %}
-
-<script src="/apps/shared/abi/clothespin-alpha-0.abi"></script>
-
-<script type="application/javascript">
-    async function connect() {
-        if (window.ethereum) {
-
-            await window.ethereum.request({method: "eth_requestAccounts"});
-            window.web3 = new Web3(window.ethereum);
-
-            const account = web3.eth.accounts;     //Get the current MetaMask selected/active wallet
-            walletAddress = account.givenProvider.selectedAddress;
-
-            console.log(`Wallet: ${walletAddress}`);
-
-            console.log("Changing Network");
-            let networkChange = window.ethereum.request({
-                method: "wallet_addEthereumChain",
-                params: [{
-                    chainId: "0x64",
-                    rpcUrls: ["https://rpc.gnosischain.com/"],
-                    chainName: "Gnosis",
-                    nativeCurrency: {
-                        name: "xDAI",
-                        symbol: "xDAI",
-                        decimals: 18
-                    },
-                    blockExplorerUrls: ["https://gnosisscan.io"]
-                }]
-            });
-            console.log(networkChange);
-            await networkChange;
-
-            networkChange.then(function () {
-
-                clothespinContract = new web3.eth.Contract(clothespinAbi, "0x2402aAF3ADA49377605ed9896376c43a3247cCC6");
-                balance = await clothespinContract.methods.balanceOf(walletAddress).call();
-                console.log(`Balance: ${balance}`);
-
-            });
-
-        } else {
-            console.log("No wallet");
-        }
-    }
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.5/web3.min.js"></script>
-
-{% endblock %}
-
 {% block between %}
 <div class="center">
     {{ between | safe }}
@@ -60,17 +9,13 @@
 {% block main %}
 
 <div id="content">
-    <input type="button" value="Connect Wallet" onclick="connect();">
     <div class="detail">
         <div class="media-item" id="ursa-minor">
-            <h2 class="bright">Ursa Minor: live from the ether 2022/h2>
+            <h2 class="bright">Ursa Minor: live from the ether 2022</h2>
             <h3 class="bright larissa">Songs from Amsterdam, Barcelona, Berlin, and Bogota</h3>
-                <a href="https://justinholmes.bandcamp.com/album/nanny-state-fiddler-single?t=1">
-    <img style="width:600px;" src="/apps/shared/img/ursa-minor.jpeg"/>
-</a>
-            <small class="bright">A single-take session in front of a tiny audience of friends and colleagues in St.
-                Pete.</small>
-            <span class="small-credit">produced by Skyler Golden</span>
+            <a href="/music/ursa-minor.html">
+                <img style="width:600px;" src="/apps/shared/img/ursa-minor.jpeg"/>
+            </a>
         </div>
 
         <div class="media-item" id="video-game-music">

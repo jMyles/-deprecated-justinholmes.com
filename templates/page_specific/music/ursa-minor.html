@@ -1,0 +1,51 @@
+{% extends "shared/generic-page.html" %}
+
+{% block web3_head_inclusion %}
+
+<script src="/apps/shared/abi/clothespin-alpha-0.abi"></script>
+<script src="/apps/shared/abi/poapABI.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.5/web3.min.js"></script>
+<script src="/apps/shared/js/checkPoap.js" type="module"></script>
+
+
+
+
+{% endblock %}
+
+{% block between %}
+<div class="center">
+    {{ between | safe }}
+</div>
+{% endblock %}
+
+{% block main %}
+
+<div id="content">
+
+    <div class="detail">
+        <div class="media-item" id="ursa-minor">
+            <h2 class="bright">Ursa Minor: live from the ether 2022</h2>
+            <h3 class="bright larissa">Songs from Amsterdam, Barcelona, Berlin, and Bogota</h3>
+            <div id="puzzle-array">
+                <img class="top-left desaturated" src="/apps/shared/img/ursa-minor-ethbcn.png"/>
+                <img class="top-right desaturated" id="devconPOAP" src="/apps/shared/img/ursa-minor-devcon.png"/>
+                <img class="bottom-left desaturated" src="/apps/shared/img/ursa-minor-berlin.png"/>
+                <img class="bottom-right desaturated" src="/apps/shared/img/ursa-minor-devconnect.png"/>
+            </div>
+
+            <div id="right-of-puzzle">
+                <div class="detail-bright-back">
+                    <h4>Ursa Minor is available to holders of any of the POAPs of the 2022 show.</h4>
+                    <input type="button" class="button" value="Check my POAPs from 2022" onclick="connect();">
+                </div>
+            </div>
+            <div id="check-bogota">Checking devconVI POAP...</div>
+        </div>
+    </div>
+    <img class="sorta-background" src="/apps/shared/img/justin-black-and-white-guitar.webp"/>
+</div>
+
+BUG REPORTS
+{% endblock %}
+
+

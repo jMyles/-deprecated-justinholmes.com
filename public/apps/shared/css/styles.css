@@ -334,3 +334,89 @@ nav a img {
     opacity: .4;
     width: 90%;
 }
+
+#puzzle-array {
+    position: relative;
+}
+
+#puzzle-array img {
+    position: absolute;
+}
+
+#puzzle-array .top-left {
+    top: 0;
+    left: 0;
+}
+
+#puzzle-array .top-right {
+    top: 0;
+    left: 205px;
+}
+
+#puzzle-array .bottom-left {
+    top: 229px;
+    left: 0;
+}
+
+#puzzle-array .bottom-right {
+    top: 167px;
+    left: 205px;
+}
+
+.desaturated {
+    filter: saturate(0);
+}
+
+.saturated {
+    animation-duration: 5s;
+    animation-name: saturate;
+    filter: saturate(1);
+}
+
+@keyframes saturate {
+    from {
+        filter: saturate(0);
+    }
+    to {
+        filter: saturate(1);
+    }
+}
+
+#right-of-puzzle {
+    position: relative;
+    left: 440px;
+}
+
+.hidden {
+    display: none;
+}
+
+.shown {
+    display: block;
+}
+
+.pulsing-red {
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-name: pulse-red;
+}
+
+@keyframes pulse-red {
+    from {
+        filter: saturate(0);
+        filter: hue-rotate(0deg);
+}
+    to {
+        filter: saturate(1);
+        filter: hue-rotate(100deg);
+    }
+}
+
+.detail-bright-back .button {
+	margin-left: 10px;
+	font-size: 20px;
+	background-color: #3c3cff;
+	color: white;
+	padding: 15px;
+}
