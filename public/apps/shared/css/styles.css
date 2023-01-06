@@ -373,6 +373,10 @@ nav a img {
     filter: saturate(1);
 }
 
+.shadowed {
+    filter: drop-shadow(-8px 8px 1px black) saturate(0);
+}
+
 @keyframes saturate {
     from {
         filter: saturate(0);
@@ -380,6 +384,17 @@ nav a img {
     to {
         filter: saturate(1);
     }
+}
+
+.artFrame {
+    height: 0;
+    width: 0;
+    filter: drop-shadow(3px 3px 2px black);
+    border: 10px dashed #4040f4;
+}
+
+#productionArt {
+    opacity: 0;
 }
 
 #right-of-puzzle {
@@ -406,7 +421,7 @@ nav a img {
     from {
         filter: saturate(0);
         filter: hue-rotate(0deg);
-}
+    }
     to {
         filter: saturate(1);
         filter: hue-rotate(100deg);
@@ -414,9 +429,16 @@ nav a img {
 }
 
 .detail-bright-back .button {
-	margin-left: 10px;
-	font-size: 20px;
-	background-color: #3c3cff;
-	color: white;
-	padding: 15px;
+    margin-left: 10px;
+    font-size: 20px;
+    background-color: #3c3cff;
+    color: white;
+    padding: 15px;
+}
+
+#POAPloadanimation {
+    width: 160px;
+    left: 155px;
+    top: 188px;
+    opacity: 0;
 }

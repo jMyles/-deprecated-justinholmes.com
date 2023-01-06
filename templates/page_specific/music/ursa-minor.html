@@ -5,10 +5,18 @@
 <script src="/apps/shared/abi/clothespin-alpha-0.abi"></script>
 <script src="/apps/shared/abi/poapABI.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.5/web3.min.js"></script>
+<script src="/apps/shared/js/velocity.min.js"></script>
+<script src="/apps/shared/js/velocity.ui.min.js"></script>
 <script src="/apps/shared/js/checkPoap.js" type="module"></script>
 
 
+<script type="module">
+    import {connect, startWaitAnimation, evaluatePOAPInventory} from "/apps/shared/js/checkPoap.js";
 
+    window.connectToWallet = connect;
+    window.startWaitAnimation = startWaitAnimation;
+    window.poaps = evaluatePOAPInventory;
+</script>
 
 {% endblock %}
 
@@ -25,21 +33,40 @@
     <div class="detail">
         <div class="media-item" id="ursa-minor">
             <h2 class="bright">Ursa Minor: live from the ether 2022</h2>
-            <h3 class="bright larissa">Songs from Amsterdam, Barcelona, Berlin, and Bogota</h3>
+            <h4 class="bright larissa">Songs from devconnect, EthBarcelona, devconVI, and Berlin Blockchain Week</h4>
             <div id="puzzle-array">
-                <img class="top-left desaturated" src="/apps/shared/img/ursa-minor-ethbcn.png"/>
-                <img class="top-right desaturated" id="devconPOAP" src="/apps/shared/img/ursa-minor-devcon.png"/>
-                <img class="bottom-left desaturated" src="/apps/shared/img/ursa-minor-berlin.png"/>
-                <img class="bottom-right desaturated" src="/apps/shared/img/ursa-minor-devconnect.png"/>
+                <img class="top-left desaturated puzzlePiece" id="ethbcnPOAP"
+                     src="/apps/shared/img/ursa-minor-ethbcn.png"/>
+                <img class="top-right desaturated puzzlePiece" id="devconPOAP"
+                     src="/apps/shared/img/ursa-minor-devcon.png"/>
+                <img class="bottom-left desaturated puzzlePiece" id="berlinPOAP"
+                     src="/apps/shared/img/ursa-minor-berlin.png"/>
+                <img class="bottom-right desaturated puzzlePiece" id="amsterdamPOAP"
+                     src="/apps/shared/img/ursa-minor-devconnect.png"/>
+                <img class="loader" id="POAPloadanimation" src="/apps/shared/img/ursa-minor.jpeg"/>
             </div>
 
             <div id="right-of-puzzle">
                 <div class="detail-bright-back">
-                    <h4>Ursa Minor is available to holders of any of the POAPs of the 2022 show.</h4>
-                    <input type="button" class="button" value="Check my POAPs from 2022" onclick="connect();">
+                    <h4>2022 was a year of lovely faces in growing crowds.</h4>
+                    <ul>
+                        <li>1 - Nanny State Fiddler</li>
+                        <li>2 - Song of Storms</li>
+                        <li>3 - Zero Knowledge and Time Machines</li>
+                        <li>4 - Clandestino</li>
+                        <li>5 - The Morning of the Bank Run</li>
+                        <li>6 - Morrison's Jig</li>
+                    </ul>
+                    <input type="button" class="button" value="Check my POAPs from 2022"
+                           onclick="window.connectToWallet();">
                 </div>
             </div>
             <div id="check-bogota">Checking devconVI POAP...</div>
+        </div>
+        <div class="media-item">
+            <div id="productionArtFrame" class="artFrame">
+                <img id="productionArt" src="/apps/shared/img/ursa-minor-production-art.png"/>
+            </div>
         </div>
     </div>
     <img class="sorta-background" src="/apps/shared/img/justin-black-and-white-guitar.webp"/>
