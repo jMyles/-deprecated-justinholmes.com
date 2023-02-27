@@ -174,9 +174,18 @@ nav a img {
 }
 
 .event .description {
-    font-size: 1.3em;
-    margin-top: 20px;
-    margin-bottom: 20px;
+	font-family: ll-pixel;
+	background-color: #0000008a;
+	font-size: 1.3em;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	color: #ffc78b;
+    float:none;
+    width: 80%;
+}
+
+.event .description a {
+    color:#8f8fff;
 }
 
 .event .media {

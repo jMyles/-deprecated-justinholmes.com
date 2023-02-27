@@ -1,16 +1,12 @@
 
 events:
-  - timeframe: EthBcn, July 8 2022
-    location: Centre Convencions International Barcelona. Barcelona, Cataluña, España
-  - timeframe: Zero Knowledge Summit 8, September 15 2022
-    location: Alte Munze, Berlin, Germany
-  - timeframe: Re:Generate, September 15 2022
-    location: Full Node, Berlin Germany
-  - timeframe: Threshold Presents The Bridge, September 16 2022
-    location: The Factory Berlin, Berlin Germany
-  - timeframe: Devcon Bogotá, October 12 and 13 2022
-    location: Chiva Lounge, Agora Bogotá Convention Center, Bogotá, Colombia
-  - timeframe: EthDenver 2023
-    location: Date and stage TBA
+  - timeframe: Threshold Network @ RIVER Mar 3 8:00PM
+    location: RIVER, Denver, Colorado
+    description: With special guests Jake Stargel, Christian Ward, and Cory Walker. <br/>  <a href="https://www.eventbrite.com/e/justin-holmes-at-river-ethdenver-tickets-555888937777">(Free) Tickets available here.</a>
+  - timeframe: EthDenver 2023 Closing Ceremony, March 5
+    location: National Western Stock Show, Denver, Colorado
+    description: With special guests Jake Stargel, Christian Ward, and Cory Walker. <br/>
+  - timeframe: EthPrague, June 11 2023
+    location: Prague, Czech Republic
   - timeframe: Porcupine Festival 2023
     location: Date and stage TBA
