@@ -4,10 +4,9 @@
 
 <script src="/apps/shared/abi/clothespin-alpha-0.abi"></script>
 <script src="/apps/shared/abi/poapABI.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.5/web3.min.js"></script>
-<script src="/apps/shared/js/velocity.min.js"></script>
-<script src="/apps/shared/js/velocity.ui.min.js"></script>
-<script src="/apps/shared/js/checkPoap.js" type="module"></script>
+<script src="/apps/shared/js/web3.min.js"></script>
+<script src="/apps/shared/js/anime.min.js"></script>
+<script src="/apps/shared/js/checkPoap.js?version={{data_checksum}}" type="module"></script>
 
 
 <script type="module">
@@ -31,48 +30,117 @@
 <div id="content">
 
     <div class="detail">
-        <div class="media-item" id="ursa-minor">
+        <div id="ursa-minor">
             <h2 class="bright">Ursa Minor: live from the ether 2022</h2>
             <h4 class="bright larissa">Songs from devconnect, EthBarcelona, devconVI, and Berlin Blockchain Week</h4>
-            <div id="puzzle-array">
-                <img class="top-left desaturated puzzlePiece" id="ethbcnPOAP"
-                     src="/apps/shared/img/ursa-minor-ethbcn.png"/>
-                <img class="top-right desaturated puzzlePiece" id="devconPOAP"
-                     src="/apps/shared/img/ursa-minor-devcon.png"/>
-                <img class="bottom-left desaturated puzzlePiece" id="berlinPOAP"
-                     src="/apps/shared/img/ursa-minor-berlin.png"/>
-                <img class="bottom-right desaturated puzzlePiece" id="amsterdamPOAP"
-                     src="/apps/shared/img/ursa-minor-devconnect.png"/>
-                <img class="loader" id="POAPloadanimation" src="/apps/shared/img/ursa-minor.jpeg"/>
+            <h5 class="bright larissa">Available January 3, 2023 for holders of show POAPs</h5>
+            <h5 class="bright larissa">Available February 4, 2023 on Bandcamp.</h5>
+
+            <div class="detail-bright-back tracklist">
+                <ul>
+                    <li>1 - Nanny State Fiddler</li>
+                    <li>2 - Song of Storms</li>
+                    <li>3 - Zero Knowledge and Time Machines</li>
+                    <li>4 - Clandestino</li>
+                    <li>5 - The Morning of the Bank Run</li>
+                    <li>6 - Morrison's Jig</li>
+                </ul>
             </div>
 
-            <div id="right-of-puzzle">
-                <div class="detail-bright-back">
-                    <h4>2022 was a year of lovely faces in growing crowds.</h4>
-                    <ul>
-                        <li>1 - Nanny State Fiddler</li>
-                        <li>2 - Song of Storms</li>
-                        <li>3 - Zero Knowledge and Time Machines</li>
-                        <li>4 - Clandestino</li>
-                        <li>5 - The Morning of the Bank Run</li>
-                        <li>6 - Morrison's Jig</li>
-                    </ul>
-                    <input type="button" class="button" value="Check my POAPs from 2022"
-                           onclick="window.connectToWallet();">
+            <div id="puzzle-area">
+                <div id="puzzle-array">
+                    <img class="bottom-right desaturated puzzlePiece" id="amsterdamPOAP"
+                         src="/apps/shared/img/ursa-minor-devconnect.png"/>
+                    <img class="bottom-left desaturated puzzlePiece" id="berlinPOAP"
+                         src="/apps/shared/img/ursa-minor-berlin.png"/>
+                    <img class="top-left desaturated puzzlePiece" id="ethbcnPOAP"
+                         src="/apps/shared/img/ursa-minor-ethbcn.png"/>
+                    <img class="top-right desaturated puzzlePiece" id="devconPOAP"
+                         src="/apps/shared/img/ursa-minor-devcon.png"/>
+                    <img class="loader" id="POAPloadanimation" src="/apps/shared/img/ursa-minor.jpeg"/>
+                </div>
+                <div id="right-of-puzzle">
+                    <div class="purpleBox" id="poap-check-dialog">
+                        <h5>Were at any of the shows in Amsterdam, Barcelona, Berlin, or Bogotá?</h5>
+                        <h6>They were minted way after the fact - if you didn't get yours, ask! :-)</h6>
+                        <input type="button" class="button" value="Check my POAPs from 2022"
+                               onclick="window.connectToWallet();"/>
+                    </div>
+
+                    <div id="poap-checking-now">
+                        <h2>Checking POAPs...</h2>
+                        <h4>(might take a whle (maybe a lng whle))</h4>
+                    </div>
+
+                    <div class="purpleBox box-to-the-right" id="found-poaps">
+                        <ul id="list-of-found-poaps">
+                        </ul>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+        <div>
+            <div id="productionArea">
+                <div id="productionArtFrame" class="artFrame">
+                    <img id="productionArt" class="opactiyZero" src="/apps/shared/img/ursa-minor-production-art.png"/>
+                </div>
+                <div class="box-to-the-right" id="productionText">
+                    <h2>Production POAP</h2>
+                    <h4>Thank you for being part of this production.</h4>
                 </div>
             </div>
-            <div id="check-bogota">Checking devconVI POAP...</div>
-        </div>
-        <div class="media-item">
-            <div id="productionArtFrame" class="artFrame">
-                <img id="productionArt" src="/apps/shared/img/ursa-minor-production-art.png"/>
+            <div id="ensembleArea">
+                <div id="ensembleArtFrame" class="artFrame">
+                    <img id="ensembleArt" class="opactiyZero" src="/apps/shared/img/ursa-minor-ensemble-art.png"/>
+                </div>
+                <div class="box-to-the-right" id="ensembleText">
+                    <h2>Ensemble POAP</h2>
+                    <h4>Jakub, Shaka, Pepa, David, Viv: love y'all's strings.</h4>
+                </div>
             </div>
         </div>
     </div>
+
+    <div id="ursa-minor-actual-album">
+        <!--        Yes, it's just a silly hidden div. :-) -->
+        <h2>Album Download</h2>
+        <a href="/apps/shared/albums/Justin%20Holmes%20-%20Ursa%20Minor%20(songs%20from%20the%20ethers%202022).zip">
+            <img style="width:300px;" src="/apps/shared/img/ursa-minor.jpeg"/>
+            <h2 id="actual-download-link">
+                -=> Fresh and fancy enumcumbered FLAC zip file here. <=-
+            </h2>
+        </a>
+
+        <hr/>
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/bYLrIGOEVPU" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/UqVmvH3Ltd4" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/mxNove01jbA" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+    </div>
+
     <img class="sorta-background" src="/apps/shared/img/justin-black-and-white-guitar.webp"/>
+
 </div>
 
-BUG REPORTS
+<div class="very-bottom">
+    Note: this POAP check is totally centralized and breakable. I had hoped to publish this album with <a
+        href="https://docs.threshold.network/app-development/threshold-access-control-tac/get-started-with-tac">
+    Threshold Access Control</a>, but the publishing toolchain isn't quite ready yet. If you find bugs, please <a
+        href="https://github.com/jMyles/justinholmes.com">report them.</a>
+</div>
 {% endblock %}
 
 

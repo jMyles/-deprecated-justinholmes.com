@@ -335,8 +335,37 @@ nav a img {
     width: 90%;
 }
 
+.very-bottom {
+	position: fixed;
+	bottom: 58px;
+	width: 100%;
+	background: #9390b7;
+	font-size: 20px;
+	text-align: center;
+}
+
+/*Mostrly Music and POAP stuff below*/
+
+#right-of-puzzle {
+    position: relative;
+    left: 490px;
+}
+
 #puzzle-array {
     position: relative;
+    float: left;
+}
+
+#puzzle-area {
+    height: 525px;
+    width: 500px;
+}
+
+#puzzle-area li {
+    color: white;
+    font-size: 1.8em;
+    filter: drop-shadow(5px 2px 2px black);
+    text-shadow: 1px 1px black;
 }
 
 #puzzle-array img {
@@ -367,68 +396,75 @@ nav a img {
     filter: saturate(0);
 }
 
-.saturated {
-    animation-duration: 5s;
-    animation-name: saturate;
-    filter: saturate(1);
-}
-
 .shadowed {
     filter: drop-shadow(-8px 8px 1px black) saturate(0);
-}
-
-@keyframes saturate {
-    from {
-        filter: saturate(0);
-    }
-    to {
-        filter: saturate(1);
-    }
 }
 
 .artFrame {
     height: 0;
     width: 0;
     filter: drop-shadow(3px 3px 2px black);
-    border: 10px dashed #4040f4;
+    border: 6px dashed;
+    float: left;
+    clear: left;
+    margin-bottom: 30px;
 }
 
-#productionArt {
-    opacity: 0;
-}
-
-#right-of-puzzle {
-    position: relative;
-    left: 440px;
-}
-
-.hidden {
+#productionArea, #ensembleArea {
+    width: 1200px;
     display: none;
 }
 
-.shown {
-    display: block;
+#productionArtFrame {
+    opacity: 0;
+    border-color: #a67b75;
 }
 
-.pulsing-red {
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-name: pulse-red;
+#ensembleArtFrame {
+    opacity: 0;
+    border-color: black;
 }
 
-@keyframes pulse-red {
-    from {
-        filter: saturate(0);
-        filter: hue-rotate(0deg);
-    }
-    to {
-        filter: saturate(1);
-        filter: hue-rotate(100deg);
-    }
+#productionText {
+    opacity: 0;
 }
 
-.detail-bright-back .button {
+#ensembleText {
+    opacity: 0;
+}
+
+.opactiyZero {
+    opacity: 0;
+}
+
+.displayNone {
+    display: none;
+}
+
+.displayBlock {
+    display: block !important;
+}
+
+.purpleBox {
+    background: rgba(90, 0, 131, 0.49) !important;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    width: 450px;
+    height: 405px;
+    padding: 15px;
+}
+
+.box-to-the-right {
+	height: 405px;
+	padding: 15px;
+	background: #908d86a3;
+	float: left;
+	width: 585px;
+	margin-left: 75px;
+	border: 1px solid white;
+}
+
+#poap-check-dialog .button {
     margin-left: 10px;
     font-size: 20px;
     background-color: #3c3cff;
@@ -441,4 +477,44 @@ nav a img {
     left: 155px;
     top: 188px;
     opacity: 0;
+}
+
+#poap-checking-now {
+    opacity: 0;
+    margin-left: 10px;
+    width: 450px;
+    height: 405px;
+    display: none;
+}
+
+#found-poaps {
+    opacity: 0;
+    margin-left: 70px;
+    display:none;
+}
+
+.tracklist {
+    font-family: ll-pixel;
+    font-size: 16px;
+    width: 400px;
+    margin-bottom:15px;
+}
+
+#ursa-minor-actual-album {
+    width: 100%;
+	background: #592929d9;
+	padding: 30px;
+	border: 2px solid black;
+    height: 0;
+    opacity: 0;
+    display: none;
+}
+
+#ursa-minor-actual-album iframe {
+    float:left;
+    clear:left;
+}
+
+#actual-download-link{
+    color: #7a76fb;
 }

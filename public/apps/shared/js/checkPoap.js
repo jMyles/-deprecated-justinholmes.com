@@ -1,7 +1,7 @@
 let web3 = new window.Web3(window.ethereum);
 let POAPContract = new web3.eth.Contract(poapProxyABI, "0x22C1f6050E56d2876009903609a2cC3fEf83B415");
 let productionEID = 95404;
-let ensembleEID = 95424;
+let ensembleEID = 95425;
 let devconnectEID = 95421;
 let berlinEID = 95422;
 let ethbcnEID = 95423;
@@ -29,33 +29,215 @@ export async function checkPoap(eventIDs) {
     }
     return POAPCountByEvent;
 }
-export function evaluatePOAPInventory(POAPInventory) {
-    if (POAPInventory[productionEID] > 0) {
-        let productionArt = document.getElementById("productionArt");
-        let productionFrame = document.getElementById("productionArtFrame");
-        let devcon = document.getElementById("devconPOAP");
-        productionArt.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
-        productionFrame.velocity({ width: 409, height: 438 }, { speed: .2 }).then(productionArt.velocity("fadeIn"));
-    }
+export async function evaluatePOAPInventory(POAPInventory) {
     console.log(POAPInventory);
-}
-export function startWaitAnimation() {
+    // Animation: Fade out spinner, and checking dialog bring in list
+    // First: the spinner
+    let spinnerFadeOut = anime.timeline({
+        targets: "#POAPloadanimation",
+    }).add({
+        opacity: 0, duration: 1000, easing: 'linear'
+    });
+    // Now, get rid of the "checking" dialogu
+    anime.timeline({ targets: "#poap-checking-now" }).add({ opacity: 0, height: 0 });
+    // ...and roll in the found list.
+    document.getElementById('found-poaps').style.display = "block";
+    anime({ targets: '#found-poaps', opacity: 1 });
+    // End animation stuff.
+    let devconAnimation;
+    let ethbcnAnimation;
+    let berlinAnimation;
+    let devconnectAnimation;
     let barcelona = document.getElementById("ethbcnPOAP");
     let devcon = document.getElementById("devconPOAP");
     let berlin = document.getElementById("berlinPOAP");
     let amsterdam = document.getElementById("amsterdamPOAP");
-    devcon.velocity({ 'left': '275px' });
-    berlin.velocity({ 'top': '304px' });
-    amsterdam.velocity({ 'left': '285px', 'top': '242px' });
+    let listOfFoundPOAPS = document.getElementById("list-of-found-poaps");
+    if (POAPInventory[devconEID] > 0) {
+        let liDevcon = document.createElement('li');
+        let foundDevcon = document.createTextNode("devconVI.");
+        liDevcon.appendChild(foundDevcon);
+        listOfFoundPOAPS.appendChild(liDevcon);
+        devconAnimation = anime.timeline({
+            targets: '#devconPOAP',
+        }).add({
+            width: '+=60px;', duration: 1000,
+        }).add({
+            filter: 'saturate(1)', duration: 1000, easing: "linear",
+        }).add({
+            width: '-=60px;', duration: 500, easing: "linear",
+        });
+    }
+    else {
+        console.log("Does not have devcon POAP.");
+        devconAnimation = anime.timeline();
+    }
+    await devconAnimation.finished;
+    console.log("Devcon finished");
+    if (POAPInventory[ethbcnEID] > 0) {
+        let liBcn = document.createElement('li');
+        let foundBcn = document.createTextNode("EthBarcelona.");
+        liBcn.appendChild(foundBcn);
+        listOfFoundPOAPS.appendChild(liBcn);
+        console.log("Has ethbcn POAP.");
+        ethbcnAnimation = anime.timeline({
+            targets: '#ethbcnPOAP',
+        }).add({
+            width: '+=60px;', duration: 1000,
+        }).add({
+            filter: 'saturate(1)', duration: 1000, easing: "linear",
+        }).add({
+            width: '-=60px;', duration: 500, easing: "linear",
+        });
+    }
+    else {
+        ethbcnAnimation = anime.timeline();
+    }
+    await ethbcnAnimation.finished;
+    console.log("BCN finished.");
+    if (POAPInventory[berlinEID] > 0) {
+        let liBerlin = document.createElement('li');
+        let foundBerlin = document.createTextNode("Berlin Blockchain Week.");
+        liBerlin.appendChild(foundBerlin);
+        listOfFoundPOAPS.appendChild(liBerlin);
+        berlinAnimation = anime.timeline({
+            targets: '#berlinPOAP',
+        }).add({
+            width: '+=60px;', duration: 1000,
+        }).add({
+            filter: 'saturate(1)', duration: 1000, easing: "linear",
+        }).add({
+            width: '-=60px;', duration: 500, easing: "linear",
+        });
+    }
+    else {
+        console.log("No berlin POAP.");
+        berlinAnimation = anime.timeline();
+    }
+    await berlinAnimation.finished;
+    if (POAPInventory[devconnectEID] > 0) {
+        let liDevconnect = document.createElement('li');
+        let foundDevconnect = document.createTextNode("devconnect.");
+        liDevconnect.appendChild(foundDevconnect);
+        listOfFoundPOAPS.appendChild(liDevconnect);
+        devconnectAnimation = anime.timeline({
+            targets: '#amsterdamPOAP',
+        }).add({
+            width: '+=60px;', duration: 1000,
+        }).add({
+            filter: 'saturate(1)', duration: 1000, easing: 'linear',
+        }).add({
+            width: '-=60px;', duration: 500, easing: "linear",
+        });
+    }
+    else {
+        devconnectAnimation = anime.timeline();
+    }
+    let concertPOAPCount = POAPInventory[devconnectEID] + POAPInventory[devconEID] + POAPInventory[berlinEID] + POAPInventory[ethbcnEID];
+    if (concertPOAPCount == 0) {
+        let noPoaps = document.createElement('li');
+        let noPoapstext = document.createTextNode("No concert POAPs found.");
+        noPoaps.appendChild(noPoapstext);
+        listOfFoundPOAPS.appendChild(noPoaps);
+    }
+    await devconnectAnimation.finished;
+    // FINISHED PUZZLE HIGHLIGHTING
+    devcon.classList.remove("shadowed");
+    berlin.classList.remove("shadowed");
+    amsterdam.classList.remove("shadowed");
+    barcelona.classList.remove("shadowed");
+    anime({ targets: devcon, left: "-=90", duration: 2000, easing: "linear" });
+    anime({ targets: berlin, top: "-=85", duration: 2000, easing: "linear" });
+    let puzzleJoin = anime.timeline({ targets: amsterdam, duration: 2000, easing: "linear", endDelay: 600, }).add({
+        left: '-=90',
+        top: '-=85px'
+    });
+    await puzzleJoin.finished;
+    let productionFrameExpand;
+    if (POAPInventory[productionEID] > 0) {
+        let productionArtFrame = document.getElementById("productionArtFrame");
+        document.getElementById("productionArea").style.display = "block";
+        productionArtFrame.scrollIntoView({ behavior: 'smooth' });
+        productionFrameExpand = anime.timeline({
+            targets: "#productionArtFrame",
+            easing: "easeInExpo"
+        }).add({ opacity: 1 }).add({ width: 409, height: 438, duration: 2000 });
+        productionFrameExpand.finished.then(function () {
+            anime({ targets: "#productionArt", opacity: 1, duration: 1500, easing: "linear" });
+            anime.timeline({ targets: "#productionText" }).add({ opacity: 1, duration: 1500, easing: "linear" });
+        });
+    }
+    else {
+        productionFrameExpand = anime.timeline();
+    }
+    await productionFrameExpand.finished;
+    let ensembleFrameExpand;
+    let ensembleTextExpand;
+    if (POAPInventory[ensembleEID] > 0) {
+        let ensembleArtFrame = document.getElementById("ensembleArtFrame");
+        document.getElementById("ensembleArea").style.display = "block";
+        ensembleArtFrame.scrollIntoView({ behavior: 'smooth' });
+        ensembleFrameExpand = anime.timeline({
+            targets: "#ensembleArtFrame",
+            easing: "easeInExpo"
+        }).add({ opacity: 1 }).add({ width: 409, height: 438, duration: 2000 });
+        ensembleFrameExpand.finished.then(function () {
+            anime({ targets: "#ensembleArt", opacity: 1, duration: 1500, easing: "linear" });
+            anime.timeline({ targets: "#ensembleText", }).add({ opacity: 1, duration: 1500, easing: "linear" });
+        });
+    }
+    else {
+        ensembleFrameExpand = anime.timeline();
+    }
+    await ensembleFrameExpand.finished;
+    // Now to reveal the album if they have a POAP.
+    let totalRelevantPOAPCount = concertPOAPCount + POAPInventory[productionEID] + POAPInventory[ensembleEID];
+    if (totalRelevantPOAPCount > 0) {
+        console.log("Revealing album.");
+        let actualAlbum = document.getElementById('ursa-minor-actual-album');
+        actualAlbum.style.display = "block";
+        actualAlbum.scrollIntoView({ behavior: 'smooth' });
+        anime({ targets: actualAlbum, opacity: 1, height: 1520, duration: 5000 });
+    }
+}
+export async function startWaitAnimation() {
+    let barcelona = document.getElementById("ethbcnPOAP");
+    let devcon = document.getElementById("devconPOAP");
+    let berlin = document.getElementById("berlinPOAP");
+    let amsterdam = document.getElementById("amsterdamPOAP");
+    anime({ targets: "#poap-check-dialog", height: 0, opacity: 0 });
+    document.getElementById("poap-checking-now").style.display = "block";
+    anime({ targets: "#poap-checking-now", opacity: 1 });
+    let animation = anime.timeline({ targets: devcon, duration: 1200, easing: "linear" }).add({ left: "+=90" });
+    anime({ targets: berlin, top: "+=85", duration: 1200, easing: "linear" });
+    anime({ targets: amsterdam, left: '+=90', top: '+=85px', duration: 1200, easing: "linear" });
     devcon.classList.add("shadowed");
     berlin.classList.add("shadowed");
     amsterdam.classList.add("shadowed");
     barcelona.classList.add("shadowed");
     let pieces = document.getElementsByClassName("puzzlePiece");
-    let animatedBear = document.getElementById("POAPloadanimation");
-    animatedBear.velocity('fadeIn').velocity({
-        transform: ["rotate3d(1, 1, 1, 360DEG)", "rotate3d(1, 1, 1, 0DEG)",]
-    }, { speed: .1, loop: true });
+    let spinnerFadeIn = anime.timeline({
+        targets: "#POAPloadanimation",
+    }).add({
+        opacity: 1, duration: 1000, easing: 'linear'
+    });
+    function whatever() {
+        console.log("done!");
+    }
+    await spinnerFadeIn;
+    let spinnerSpinning = anime({
+        targets: "#POAPloadanimation",
+        rotateZ: [0, 360],
+        rotateX: [0, 360],
+        rotateY: [0, 360],
+        loop: true,
+        duration: 8000,
+        direction: 'alternate',
+        easing: "linear",
+    });
+    console.log('llamas');
+    await animation.finished;
+    return spinnerSpinning;
 }
 export async function connect() {
     // WALLET CHECK ->
@@ -65,7 +247,6 @@ export async function connect() {
         throw TypeError("No wallet.");
     }
     // <- WALLET CHECK
-    console.log("Getting wallet info.  Hey RJ.");
     await window.ethereum.request({ method: "eth_requestAccounts" });
     console.log("Changing Network");
     let networkChange = window.ethereum.request({
@@ -116,6 +297,9 @@ export async function connect() {
     });
     await networkChangeResult;
     // Network Change is good, let's check the POAPs now.
+    let animationStarted = startWaitAnimation();
+    await animationStarted;
+    console.log("dingos");
     const account = web3.eth.accounts;
     let walletAddress = account.givenProvider.selectedAddress;
     console.log(`Wallet: ${walletAddress}`);
@@ -129,10 +313,18 @@ export async function connect() {
     ];
     let POAPCheckRun = checkPoap(relevantEvents);
     console.log("About to wait a while:");
+    await animationStarted;
     POAPCheckRun.then(function (POAPInventory) {
         console.log("Done waiting.");
+        document.getElementById("poap-check-dialog").classList.add("displayNone");
+        let waitingAnimation;
+        animationStarted.then(async function (spinnerAnimation) {
+            spinnerAnimation.pause();
+        });
         evaluatePOAPInventory(POAPInventory);
+        // evaluatePOAPInventory({95404: 0, 95425: 0, 95421: 0, 95422: 0, 95423: 1, 95424: 1});
     }, function (exception) {
-        console.log("Not sure what to do here.");
+        console.log(`Something went wrong: ${exception.message}`);
+        alert(`Something went wrong: ${exception.message}`);
     });
 }
