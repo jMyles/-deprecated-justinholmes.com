@@ -54,8 +54,8 @@ hr {
 }
 
 #slice nav {
-    margin-left: 70px;
-    margin-top: -15px;
+	margin-left: 222px;
+	margin-top: 88px;
 }
 
 #slice span {
@@ -526,4 +526,22 @@ nav a img {
 
 #actual-download-link{
     color: #7a76fb;
+}
+
+.top-title .logo, logo-link {
+	position: fixed;
+	right: 0;
+	top: 20px;
+	z-index: -1;
+	width: 300px;
+}
+
+.as-slice {
+    height:100px;
+}
+
+.as-slice .logo {
+    position:fixed;
+    height: 150px;
+    width: 150px;
 }
