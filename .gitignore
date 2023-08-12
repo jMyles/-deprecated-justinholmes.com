@@ -36,4 +36,6 @@ variables*.yml
 *venvs
 public/*
 !public/apps
+.DS_Store
+data/compiled
 
